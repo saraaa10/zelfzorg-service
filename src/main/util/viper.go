@@ -13,7 +13,7 @@ type DBStruct struct {
 	User   string `mapstructure:"DB_USER"`
 	Pass   string `mapstructure:"DB_PASS"`
 	DBName string `mapstructure:"DB_NAME"`
-zK}
+}
 
 func LoadENV(path string) (db DBStruct, err error) {
 	viper.AddConfigPath(path)
