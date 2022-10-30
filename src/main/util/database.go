@@ -2,6 +2,7 @@ package util
 
 import (
 	"fmt"
+	"service-api/src/main/entities"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -12,7 +13,7 @@ func InitDB() *gorm.DB {
 	if err != nil {
 		panic(err)
 	}
-	url := fmt.Sprintf("host=%s user=%s pass=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Jakarta", env.Host, env.User, env.Pass, env.DBName, env.Port)
+	url := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Jakarta", env.Host, env.User, env.Pass, env.DBName, env.Port)
 	db, err := gorm.Open(postgres.Open(url), &gorm.Config{})
 	if err != nil {
 		panic(err)
@@ -21,5 +22,9 @@ func InitDB() *gorm.DB {
 }
 
 func AuthMigrateDB(db *gorm.DB) error {
-	return db.AutoMigrate()
+	return db.AutoMigrate(
+		&entities.User{},
+		&entities.UserType{},
+		&entities.Transaction{},
+	)
 }
