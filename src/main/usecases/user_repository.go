@@ -1,6 +1,10 @@
 package usecases
 
-import "service-api/src/main/entities"
+import (
+	"service-api/src/main/entities"
+
+	"gorm.io/gorm"
+)
 
 type UserRepository interface {
 	FindAll() ([]entities.User, error)
@@ -8,4 +12,8 @@ type UserRepository interface {
 	FindByEmail(email string) (entities.User, error)
 	FindByUsername(username string) (entities.User, error)
 	Save(user entities.User) (entities.User, error)
+}
+
+type userRepo struct {
+	db *gorm.DB
 }
