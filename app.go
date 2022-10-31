@@ -1,8 +1,8 @@
 package main
 
-import "service-api/src/main/util"
+import "service-api/src/main/infra"
 
 func main() {
-	db := util.InitDB()
-	util.AuthMigrateDB(db)
+	db := infra.InitDB()
+	infra.AuthMigrateDB(db)
 }

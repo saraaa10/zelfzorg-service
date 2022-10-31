@@ -1,4 +1,4 @@
-package usecases
+package repositories
 
 import "service-api/src/main/entities"
 

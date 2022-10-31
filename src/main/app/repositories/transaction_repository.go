@@ -1,4 +1,4 @@
-package usecases
+package repositories
 
 import (
 	"service-api/src/main/entities"
@@ -15,4 +15,10 @@ type TransactionRepo interface {
 
 type transactionRepo struct {
 	db *gorm.DB
+}
+
+func NewTransactionRepo(db *gorm.DB) *transactionRepo {
+	return &transactionRepo{
+		db: db,
+	}
 }
