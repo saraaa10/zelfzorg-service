@@ -1,8 +1,8 @@
-package util
+package infra
 
 import (
 	"fmt"
-	"service-api/src/main/entities"
+	"service-api/src/main/app/entities"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

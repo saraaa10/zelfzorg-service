@@ -1,4 +1,4 @@
-package util
+package infra
 
 type Response struct {
 	Meta Meta
