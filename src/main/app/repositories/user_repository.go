@@ -17,3 +17,7 @@ type UserRepository interface {
 type userRepo struct {
 	db *gorm.DB
 }
+
+func newUserRepo(db *gorm.DB) *userRepo {
+	return &userRepo{db}
+}
