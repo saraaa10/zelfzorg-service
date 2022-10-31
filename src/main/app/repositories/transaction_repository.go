@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	"service-api/src/main/entities"
+	"service-api/src/main/app/entities"
 
 	"gorm.io/gorm"
 )
