@@ -1,6 +1,6 @@
 package repositories
 
-import "service-api/src/main/entities"
+import "service-api/src/main/app/entities"
 
 type UserTypeRepo interface {
 	FindAll() ([]entities.UserType, error)
